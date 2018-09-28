@@ -38,7 +38,6 @@ class BurgerBuilder extends Component {
                 return sum + el;
             }, 0);
         this.setState({ purchasable: sum > 0 })
-
     }
 
     addIngredientHandler = (type) => {
@@ -92,7 +91,7 @@ class BurgerBuilder extends Component {
             },
             deliveryMethod: 'fastest'
         }
-        axios.post('/orders', order)
+        axios.post('/orders.json', order)
             .then(response => {
                 this.setState({ loading: false, purchasing:false });
             })
